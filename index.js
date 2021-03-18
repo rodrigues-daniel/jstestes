@@ -1,11 +1,6 @@
-const express = require('express');
-const app = express();
+const app = require('./server');
 const port = 3000;
 
-app.get('/', (req, res) => {
-   res.send('Olá Mundo!');
-});
-
 app.listen(port, () => {
-    console.log("Servidor Iniciado na porta: 3000");
+    console.log(`Servidor Iniciado na porta http://localhost:${port}`);
 });
