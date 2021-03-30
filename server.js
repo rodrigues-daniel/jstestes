@@ -10,7 +10,7 @@ app.use(routes);
 app.use(express.static('public'));
 
 
-app.listen(port, () => {
+app.listen(process.env.port || port , () => {
     console.log(`Servidor Iniciado na porta http://localhost:${port}`);
 });
 
