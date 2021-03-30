@@ -1,0 +1,25 @@
+html,body{
+    box-sizing: border-box;
+    margin:0px;
+    padding: 0px;
+    outline: 0px;
+}
+
+.container{
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.col-left{
+    background-color: blue;
+    width: 2px;
+}
+
+.col-center{
+    background-color: blueviolet;
+    width: 10px;
+}
+
+.col-rigth{
+    background-color: coral;
+    width: 10px;
+}

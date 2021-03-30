@@ -1,11 +1,20 @@
 <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Pagina Formulario</title> 
+    <link rel="stylesheet" href="/form.css">      
+</head>
 <body>
-    <head>
-        <meta charset="utf-8">
-        <title>Pagina Formulario</title>        
+ 
+        <div class="col-left">
 
+        </div>
+        
+        
         <form name="novo-post" method="POST" action="/post"> 
             
+            <div class="col-center">
             <label for="id-text">Formulario</label>
             <br>
             <textarea id="id-text" name="novotexto">
@@ -13,8 +22,13 @@
             </textarea>
             <br>
             <input id="id-submit" value="salvar" type="submit" />
+            </div>
 
+        </form>
+        
+        <div class="col-right">
 
-        </form>    
-    </head>
+        </div>
+    
 </body>
+</html>
