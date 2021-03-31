@@ -42,10 +42,9 @@ routes.get('/list', async (req,res)=>{
 
 routes.post('/post', async (req,res) => {
 
-  const { texto,data }  = req.body;
+  const { texto, data }  = req.body;
   
-
-  console.log(data);
+ 
 
   if(IsVazio(texto)){  
      
@@ -59,7 +58,7 @@ routes.post('/post', async (req,res) => {
      
   }
 
-  if(data != null){
+  //if(data.lenght != 0){
 
        
         const novopost = await Posts.create({ texto, data});  
@@ -69,8 +68,9 @@ routes.post('/post', async (req,res) => {
          
         res.redirect('/list');
 
-  }
+  //}
 
+  /*
   let ts = Date.now();
 
   let obj_data = new Date(ts);
@@ -84,7 +84,7 @@ routes.post('/post', async (req,res) => {
 
   //return res.json(novopost);
 
-  res.redirect('/list')
+  res.redirect('/list')  */
 
 });
 
