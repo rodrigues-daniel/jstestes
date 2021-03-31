@@ -15,6 +15,22 @@ routes.get('/', async (req,res)=>{
 })
 
 
+routes.get('/vazio', async (req,res)=>{
+
+  return res.send("Formulario vazio, digite algo e envie novamente <a href='http://localhost:3000/'>Voltar</a>");
+    
+
+})
+
+routes.get('/maiorque50', async (req,res)=>{
+
+  return res.send("Ultrapassou o Limite de 50 Caracteres Volte\
+   e tente novamente! <a href='http://localhost:3000/'>Voltar</a>");
+    
+
+})
+
+
 routes.get('/list', async (req,res)=>{
 
     const resposta = await Posts.findAll(); 
@@ -27,23 +43,31 @@ routes.get('/list', async (req,res)=>{
 routes.post('/post', async (req,res) => {
 
   const { texto,data }  = req.body;
+  
 
-  if(IsVazio(texto)){        
-    return res.json({'Resposta':'Texto vazio'});
+  console.log(data);
+
+  if(IsVazio(texto)){  
+     
+     res.redirect('/vazio');
   }
     
 
   if(IsMaiorQue50(texto)){    
-    return res.json({'Resposta':'Post maior que 50 caracteres'});
+      
+     res.redirect('/maiorque50')
+     
   }
-
 
   if(data != null){
 
        
         const novopost = await Posts.create({ texto, data});  
 
-        return res.json(novopost);
+        //return res.json(novopost);
+
+         
+        res.redirect('/list');
 
   }
 
@@ -58,7 +82,9 @@ routes.post('/post', async (req,res) => {
 
   const novopost = await Posts.create({ texto, data:dataString });  
 
-  return res.json(novopost);
+  //return res.json(novopost);
+
+  res.redirect('/list')
 
 });
 

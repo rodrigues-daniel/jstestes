@@ -6,20 +6,28 @@ html,body{
 }
 
 .container{
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
 .col-left{
-    background-color: blue;
-    width: 2px;
+    background-color:#fff;
+    width: 100%;
 }
 
 .col-center{
-    background-color: blueviolet;
-    width: 10px;
+    background-color: coral;
+    width: 100%;
+    padding: 5px;
+    
+}
+ 
+.col-right{
+    background-color:#fff;
+    width: 100%;
 }
 
-.col-rigth{
-    background-color: coral;
-    width: 10px;
+textarea{
+    width: 96.8%;
+    
 }

@@ -4,7 +4,8 @@ module.exports = {
    
     
     IsMaiorQue50(texto){
-
+         
+         
         if(texto.length >= 50){
             return true;
         }
@@ -14,8 +15,9 @@ module.exports = {
     },
 
     IsVazio(texto){
-
-        if(texto.length == 0){
+        
+        
+        if(texto.length === 0){
             return true;
         }
 

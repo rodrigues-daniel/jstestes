@@ -3,9 +3,16 @@
 <head>
     <meta charset="utf-8">
     <title>Pagina Formulario</title> 
-    <link rel="stylesheet" href="/form.css">      
+    <link rel="stylesheet" href="/form.css">   
+    <script type="text/javascript">
+    
+    function clearContents(element) {
+            element.value = '';
+    }
+    
+    </script>   
 </head>
-<body>
+<body class="container">
  
         <div class="col-left">
 
@@ -15,13 +22,14 @@
         <form name="novo-post" method="POST" action="/post"> 
             
             <div class="col-center">
-            <label for="id-text">Formulario</label>
+            <label for="id-text">Novo Post</label>
             <br>
-            <textarea id="id-text" name="novotexto">
-
+            <input type="date" name="data">
+            <br>
+            <textarea onfocus="clearContents(this);"  id="id-text" name="texto" pattern="[0-9][a-z]">
             </textarea>
             <br>
-            <input id="id-submit" value="salvar" type="submit" />
+            <input id="id-submit" value="Enviar" type="submit" /><a href="http://localhost:3000/list">Listagem</a>
             </div>
 
         </form>

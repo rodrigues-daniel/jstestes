@@ -12,14 +12,15 @@ describe('Testes de Integração', ()=>{
         let mes = obj_data.getMonth() + 1;
         let ano = obj_data.getFullYear();
         
-        let dataString = dia + '##/##' + mes + '##/##' + ano;
+        let dataString = dia + '/' + mes + '/' + ano;
 
          const resposta = await request(app)
-                    .post("/post")
-                    .send({"texto":"Olá Mundo!","data":dataString})
+                    .post("/post") 
+                    .send({'texto':'teste com JEST'});        
+                     
                     
                     
-                    expect(resposta.statusCode).toBe(200);
+                    expect(resposta.statusCode).toBe(302);
                         
     
 
